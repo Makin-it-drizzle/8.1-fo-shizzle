@@ -3,7 +3,7 @@ var request = require('superagent');
 var Form = require('./Form.react');
 var List = require('./List.react');
 
-var App = React.createClass({
+var Users = React.createClass({
   getInitialState: function(){
     return {
       users: []
@@ -11,26 +11,26 @@ var App = React.createClass({
   },
 
   componentWillMount: function() {
-    this._fetchApp();
+    this._fetchUsers();
   },
 
   render: function() {
     return (
       <div>
-        <Form create={this._createForm} />
+        <Form createUser={this._createUser} />
         <List users={this.state.users} />
       </div>
     )
   },
 
-  _fetchApp: function() {
+  _fetchUsers: function() {
     request
       .get('/users')
       .set('Accept', 'application/json')
       .end(this._handleFetch);
   },
 
-  _createApp: function(data) {
+  _createUser: function(data) {
     request
     .post('/users')
     .send(data)
@@ -52,9 +52,9 @@ var App = React.createClass({
       window.alert('SUPER FAIL!');
       return;
     }
-    this._fetchApp();
+    this._fetchUsers();
   }
 
 });
 
-module.exports = App;
+module.exports = Users;

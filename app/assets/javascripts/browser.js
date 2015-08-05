@@ -1,9 +1,9 @@
 var React = require('react');
-var App = require('./App.react.js');
+var Users = require('./Users.react.js');
 
 var browser = function() {
-  var div = document.querySelector('[data-js="app"]');
-  React.render(<App />, div);
+  var div = document.querySelector('[data-js="users"]');
+  React.render(<Users />, div);
 };
 
 module.exports = browser;
