@@ -1,7 +1,7 @@
 var React = require('react');
 var User = require('./User.react');
 
-var userList = React.createClass({
+var List = React.createClass({
   render: function(){
     return (
       <ul>
@@ -18,4 +18,4 @@ var userList = React.createClass({
 
 });
 
-module.exports = userList;
+module.exports = List;

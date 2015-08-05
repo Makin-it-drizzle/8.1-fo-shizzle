@@ -1,7 +1,7 @@
 var React = require('react');
 var request = require('superagent');
-var userInfoForm = require('./user_info_form.react');
-var userList = require('./user_list.react');
+var Form = require('./Form.react');
+var List = require('./List.react');
 
 var App = React.createClass({
   getInitialState: function(){
@@ -17,22 +17,22 @@ var App = React.createClass({
   render: function() {
     return (
       <div>
-        <userInfoForm create={this._createUserForm} />
-        <userList users={this.state.users} />
+        <Form create={this._createForm} />
+        <List users={this.state.users} />
       </div>
     )
   },
 
   _fetchApp: function() {
     request
-      .get('users')
+      .get('/users')
       .set('Accept', 'application/json')
       .end(this._handleFetch);
   },
 
   _createApp: function(data) {
     request
-    .post('users')
+    .post('/users')
     .send(data)
     .set('Accept', 'application/json')
     .set('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').content)
