@@ -1,6 +1,6 @@
 class CreateUserInfos < ActiveRecord::Migration
   def change
-    create_table :user_infos do |t|
+    create_table :users do |t|
       t.string :name, null: false
       t.string :address
       t.string :phone
