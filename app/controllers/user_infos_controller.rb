@@ -1,8 +1,8 @@
 class UserInfosController < ApplicationController
   def index
-    @user_infos = UserInfo.all
     respond_to do |format|
-      format.json { render json: @user_infos }
+      format.html
+      format.json { @user_infos = UserInfo.all }
     end
   end
 
