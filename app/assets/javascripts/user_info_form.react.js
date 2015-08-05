@@ -5,16 +5,16 @@ var userForm = React.createClass({
     return (
       <form onSubmit={this._handleSubmit}>
         <div>
-          <label htmlFor="name">Name: </label>
-          <input id="Name" />
+          <label htmlFor="name">Name:</label>
+          <input ref= "Name" id="Name" />
         </div>
         <div>
-          <label htmlFor="email">Email: </label>
-          <input id="Email" />
+          <label htmlFor="email">Email:</label>
+          <input ref= "Email" id="Email" />
         </div>
         <div>
-          <label htmlFor="password_digest">Password_digest: </label>
-          <input id="Password_digest" />
+          <label htmlFor="password_digest">Password:</label>
+          <input ref= "password_digest" id="Password_digest" />
         </div>
         <div>
           <button>Submit</button>

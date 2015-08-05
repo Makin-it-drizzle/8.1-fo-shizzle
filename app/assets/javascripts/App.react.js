@@ -25,14 +25,14 @@ var App = React.createClass({
 
   _fetchApp: function() {
     request
-      .get('/app')
+      .get('user_infos')
       .set('Accept', 'application/json')
       .end(this._handleFetch);
   },
 
   _createApp: function(data) {
     request
-    .post('/app')
+    .post('user_infos')
     .send(data)
     .set('Accept', 'application/json')
     .set('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').content)
