@@ -1,20 +1,21 @@
 var React = require('react');
 
+
 var Form = React.createClass({
   render: function() {
     return (
       <form onSubmit={this._handleSubmit}>
         <div>
-          <label htmlFor="name">Name:</label>
-          <input ref= "Name" id="Name" />
+          <label htmlFor="name">Name: </label>
+          <input ref= "name" id="name" />
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
-          <input ref= "Email" id="Email" />
+          <label htmlFor="email">Email: </label>
+          <input ref= "email" id="email" />
         </div>
         <div>
-          <label htmlFor="password_digest">Password:</label>
-          <input ref= "password_digest" id="Password_digest" />
+          <label htmlFor="password_digest">Password: </label>
+          <input ref= "password_digest" id="password_digest" />
         </div>
         <div>
           <button>Submit</button>
@@ -23,10 +24,15 @@ var Form = React.createClass({
     );
   },
 
-  _handleSubmit(e) {
+  _handleSubmit: function(e) {
     e.preventDefault();
-    console.log(e);
+    var data = {
+      name: this.refs.name.getDOMNode().value.trim(),
+      email: this.refs.email.getDOMNode().value.trim(),
+      password_digest: this.refs.password_digest.getDOMNode().value.trim()
+    };
+    this.props.createUser(data);
   }
-})
+});
 
 module.exports = Form;
