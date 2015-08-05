@@ -17,16 +17,19 @@
   "homepage": "https://github.com/seanmpage/8.1-fo-shizzle#readme",
   "devDependencies": {
     "browserify": "^11.0.1",
-    "browserify-incremental": "^3.0.1"
+    "browserify-incremental": "^3.0.1",
+    "reactify": "^1.1.1"
   },
   "dependencies": {
     "director": "^1.2.8",
     "react": "^0.13.3",
-    "reactify": "^1.1.1"
+    "superagent": "^1.2.0"
   },
   "browserify": {
     "transform": [
-    ["reactify"]
+      [
+        "reactify"
+      ]
     ]
   }
 }
