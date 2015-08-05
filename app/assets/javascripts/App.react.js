@@ -6,7 +6,7 @@ var userList = require('./user_list.react');
 var App = React.createClass({
   getInitialState: function(){
     return {
-      app: []
+      users: []
     };
   },
 
@@ -18,21 +18,21 @@ var App = React.createClass({
     return (
       <div>
         <userInfoForm create={this._createUserForm} />
-        <userList create={this.state.items} />
+        <userList users={this.state.users} />
       </div>
     )
   },
 
   _fetchApp: function() {
     request
-      .get('user_infos')
+      .get('users')
       .set('Accept', 'application/json')
       .end(this._handleFetch);
   },
 
   _createApp: function(data) {
     request
-    .post('user_infos')
+    .post('users')
     .send(data)
     .set('Accept', 'application/json')
     .set('X-CSRF-Token', document.querySelector('meta[name="csrf-token"]').content)
@@ -44,7 +44,7 @@ var App = React.createClass({
       window.alert('FAIL!');
       return;
     }
-    this.setState({ items: res.body });
+    this.setState({ users: res.body });
   },
 
   _handleCreate: function(err, res) {
