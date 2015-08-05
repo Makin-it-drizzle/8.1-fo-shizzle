@@ -1,6 +1,6 @@
 var React = require('react');
 
-var userForm = React.createClass({
+var Form = React.createClass({
   render: function() {
     return (
       <form onSubmit={this._handleSubmit}>
@@ -29,4 +29,4 @@ var userForm = React.createClass({
   }
 })
 
-module.exports = userForm;
+module.exports = Form;
