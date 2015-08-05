@@ -3,3 +3,4 @@ UserInfo.create!([
   {name: 'Meeeesh', address: '234 address', phone: '111-111-1111', email: 'meeesh@dollaz.com', password_digest: 'password'},
   {name: 'Tibby', address: '345 address', phone: '800-123-RUFF', email: 'tibby@dollaz.com', password_digest: 'password'}
 ])
+

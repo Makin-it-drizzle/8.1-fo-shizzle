@@ -2,15 +2,12 @@
 <html>
 <head>
   <title>FoShizzle</title>
-  <%= stylesheet_link_tag    'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>  
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-  <div class="app">
-    <!-- <div class="{{'data-js': 'appMain'}}"> -->
-    <%= yield %>
-  </div>
+  <%= yield %>
+  <div data-js="app"></div>
   <%= javascript_include_tag 'application', async: true %>
 
 </body>
