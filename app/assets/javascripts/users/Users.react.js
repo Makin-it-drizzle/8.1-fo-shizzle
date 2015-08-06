@@ -41,7 +41,7 @@ var Users = React.createClass({
 
   _handleFetch: function(err, res) {
     if (err) {
-      window.alert('FAIL!');
+      console.log(err.response);
       return;
     }
     this.setState({ users: res.body });
@@ -49,7 +49,7 @@ var Users = React.createClass({
 
   _handleCreate: function(err, res) {
     if (err) {
-      window.alert('SUPER FAIL!');
+      console.log(err.response);
       return;
     }
     this._fetchUsers();

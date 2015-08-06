@@ -5,7 +5,7 @@ var User = React.createClass({
   render: function(){
     return (
       <li>
-        {this.props.data.name}
+        Name: {this.props.data.name} | Email: {this.props.data.email} | Phone: {this.props.data.phone}
       </li>
     )
   },
