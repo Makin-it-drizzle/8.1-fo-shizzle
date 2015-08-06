@@ -12,7 +12,7 @@ var List = React.createClass({
 
   _buildUsers: function() {
     return this.props.users.map(function(user) {
-      return <User data={user} key={user.name} />
+      return <User data={user} key={user.name + user.id} />
     })
   }
 

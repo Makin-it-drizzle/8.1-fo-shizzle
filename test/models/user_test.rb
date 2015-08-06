@@ -21,9 +21,4 @@ class UserTest < ActiveSupport::TestCase
     assert @user.errors.keys.include?(:email)
   end
 
-  test "is invalid without password_digest" do
-    @user.password_digest = ""
-    refute @user.valid?
-    assert @user.errors.keys.include?(:password_digest)
-  end
 end

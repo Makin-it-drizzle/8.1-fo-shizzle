@@ -5,7 +5,7 @@ class CreateUserInfos < ActiveRecord::Migration
       t.string :address
       t.string :phone
       t.string :email, null: false
-      t.string :password_digest, null: false
+      t.string :password_digest
       t.timestamps null: false
     end
   end
