@@ -1,9 +1,13 @@
 var React = require('react');
-var Container = require('./users/Container.react.js');
+var Signup = require('./users/Signup.react.js');
+var Login = require('./sessions/Login.react.js');
 
 module.exports = function() {
-  var container = document.querySelector('[data-js="newUser"]');
-  if (container) {
-    React.render(<Container />, container);
+  var signup = document.querySelector('[data-js="newUser"]');
+  var login = document.querySelector('[data-js="newLogin"]');
+  if (signup) {
+    React.render(<Signup />, signup);
+  } else if (login) {
+    React.render(<Login />, login);
   }
 };

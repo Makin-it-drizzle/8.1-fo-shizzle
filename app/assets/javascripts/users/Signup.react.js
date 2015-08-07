@@ -1,6 +1,6 @@
 var React = require('react');
 var request = require('superagent');
-var Form = require('./signup/Form.react');
+var Form = require('./Form.react.js');
 
 var Container = React.createClass({
 
