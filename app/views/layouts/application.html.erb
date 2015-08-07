@@ -2,12 +2,11 @@
 <html>
 <head>
   <title>FoShizzle</title>
-  <%= stylesheet_link_tag 'application', media: 'all' %>  
+  <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= yield %>
-  <div data-js="users"></div>
   <%= javascript_include_tag 'application', async: true %>
 
 </body>
