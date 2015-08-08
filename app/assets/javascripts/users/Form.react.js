@@ -17,10 +17,6 @@ var Form = React.createClass({
           <input ref= "email" id="email" />
         </div>
         <div>
-          <label htmlFor="phone">Phone #: </label>
-          <input ref= "phone" id="phone" />
-        </div>
-        <div>
           <label htmlFor="password">Password: </label>
           <input ref= "password" id="password" />
         </div>
@@ -41,7 +37,6 @@ var Form = React.createClass({
       user: {
         name: this.refs.name.getDOMNode().value.trim(),
         email: this.refs.email.getDOMNode().value.trim(),
-        phone: this.refs.phone.getDOMNode().value.trim(),
         password: this.refs.password.getDOMNode().value.trim(),
         password_confirmation: this.refs.password_confirmation.getDOMNode().value.trim()
      }
@@ -51,7 +46,7 @@ var Form = React.createClass({
 
   _clearInputs: function() {
     var self = this;
-    ['name', 'email', 'phone', 'password', 'password_confirmation'].forEach(function(item) {
+    ['name', 'email', 'password', 'password_confirmation'].forEach(function(item) {
       self.refs[item].getDOMNode().value = '';
     });
   }
