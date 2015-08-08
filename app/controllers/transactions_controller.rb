@@ -22,8 +22,8 @@ class TransactionsController < ApplicationController
 
   def update
     @transaction = get_transaction
-    respond_to do |fo|
-      if @transaction.update_attributes(task_params)
+    respond_to do |format|
+      if @transaction.update_attributes(transaction_params)
         format.json { render json: {}, status: 202 }
       else
         format.json { render json: @transaction.errors, status: 422 }
@@ -42,7 +42,7 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:date, :amount, :type)
+    params.require(:transaction).permit(:name, :date, :amount, :type)
   end
 
   def get_transaction
