@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  root 'users#index'
-  resources :users, only: [:index, :create]
+
+  root 'home#index'
+
+  get  '/login' =>  'sessions#new'
+  post '/login' =>  'sessions#create'
+  get  '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
   resources :transactions, only: [:index, :create, :update, :destroy]
+
 end
