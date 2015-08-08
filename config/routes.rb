@@ -6,8 +6,9 @@ Rails.application.routes.draw do
   post '/login' =>  'sessions#create'
   get  '/logout' => 'sessions#destroy'
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  get  '/signup' => 'users#new'
+  post '/users'  => 'users#create'
+  get  '/edituser'  => 'users#edit'
 
   resources :transactions, only: [:index, :create, :update, :destroy]
 
