@@ -25,7 +25,7 @@ var Form = React.createClass({
           <input ref= "category" id="category" />
         </div>
         <div>
-          <button>Submit</button>
+          <button className="submit">Submit</button>
         </div>
       </form>
     );

@@ -8,84 +8,115 @@ html {
 }
 html, 
 body {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans-Serif;
+  color: #4d4d4d;
+  margin: 10px;
 }
 body {
-  font-family: Helvetica Neue, Helvetica, Arial, Sans-Serif;
-  color: #4D4D4D;
-  margin: 15px;
-  padding: 15px;
-  background-color: #F5F5F5;
-  font-size: 18px;
+  padding: 5px;
+  background-color: #f0f8ff;
 }
-th,
+form {
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  overflow: scroll;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans-Serif;
+  color: #4d4d4d;
+  background-color: #f0f8ff;
+  margin-right: 5%;
+}
+table {
+  box-shadow: 0 0px 1px rgba(0, 0, 0, 0.3);
+  background-color: #b3e8e1;
+  padding: 20px 20px;
+  color: #4d4d4d;
+  overflow: scroll;
+  position: absolute;
+  width: 50%;
+  font-size: 1.3rem;
+  font-family: Helvetica Neue, Helvetica, Arial, Sans-Serif;
+  margin-left: 45%;
+}
+th {
+  font-size: 1rem;
+  text-align: left;
+}
 td {
+  text-align: center;
+  padding: 5px 5px;
+}
+tr {
   padding: 5px 10px;
 }
 tr:nth-child(even) {
-  background-color: #DCDCDC;
+  background-color: #f0f8ff;
+  color: #4d4d4d;
 }
 h1 {
   font-family: Helvetica Neue, Helvetica, Arial, Sans-Serif;
-  color: #4D4D4D;
+  color: #4d4d4d;
 }
 a {
   text-decoration: none;
-  color: inherit;
-  font-size: 18px;
+  color: #4d4d4d;
+  font-size: 1.3rem;
 }
 a:hover {
-  color: #4156F4;
+  color: #FB8950;
   font-weight: 500;
+}
+label {
+  font-size: 1.3rem;
+  padding: 10px auto;
 }
 input {
   width: 100%;
   display: inline-block;
   text-align: left;
   font-family: Helvetica;
-  color: #4D4D4D;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  color: #4d4d4d;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
   margin: 10px auto;
-  padding: 5px 10px;
-  background-color: #fff;
+  padding: 10px 10px;
+  background-color: #b3e8e1;
   font-size: 1.5rem;
 }
 button {
-  width: 100%;
   display: inline-block;
-  color: #4D4D4D;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-  margin: 10px auto;
-  padding: 15px 25px;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3);
+  margin: 5px auto;
+  padding: 10px 10px;
   text-align: center;
-  font-size: 33px;
-  background-color: #DCDCDC;
+  font-size: 1rem;
+  background-color: #014336;
+  color: #f0f8ff;
 }
 button:hover {
-  background-color: #4156F4;
-  color: #FFF;
+  background-color: #FB8950; 
+  color: #f0f8ff;
 }
 
-/*to eventually make responsive*/
-/*@media all and (max-width: 1024px) {
-  .__section {
+@media all and (max-width: 1024px) {
+  body {
     width: 100%;
   }
-  .__other {
-    width: 50%;
-    height: 50%;
-    margin: 0;
+  form, table {
+    width: auto;
     position: relative;
+    font-size: 100%;
+    margin-left: 0;
   }
 }
 @media all and (max-width: 480px) {
-  .__section {
+  body {
     width: 100%;
   }
-  .__other {
+  form, table {
     width: auto;
-    height: auto;
-    margin: 0;
     position: relative;
+    font-size: 100%;
+    margin-left: 0;
   }
-}*/
+}
