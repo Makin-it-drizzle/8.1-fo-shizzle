@@ -10,9 +10,10 @@
 <body>
 
   <% if current_user %>
-    Logged in as <%= current_user.name %> | <%= link_to 'Logout', '/logout' %>
+    <%= link_to 'Budget', '/' %> | Logged in as <%= current_user.name %> | <%= link_to 'Logout', '/logout' %> | <%= link_to 'Edit User', '/edituser' %>
+        
   <% else %>
-    <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+    <%= link_to 'Home', '/' %> | <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
   <% end %>
   <%= yield %>
   <%= javascript_include_tag 'application', async: true %>

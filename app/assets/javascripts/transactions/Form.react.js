@@ -34,10 +34,12 @@ var Form = React.createClass({
   _handleSubmit: function(e) {
     e.preventDefault();
     var data = {
-      name: this.refs.name.getDOMNode().value.trim(),
-      date: this.refs.date.getDOMNode().value.trim(),
-      amount: this.refs.amount.getDOMNode().value.trim(),
-      category: this.refs.category.getDOMNode().value.trim(),
+      transaction: {
+        name: this.refs.name.getDOMNode().value.trim(),
+        date: this.refs.date.getDOMNode().value.trim(),
+        amount: this.refs.amount.getDOMNode().value.trim(),
+        category: this.refs.category.getDOMNode().value.trim(),
+      }
     };
     this.props.createTransaction(data);
   },

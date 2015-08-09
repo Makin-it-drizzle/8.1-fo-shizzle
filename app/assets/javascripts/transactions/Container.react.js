@@ -22,7 +22,6 @@ var Container = React.createClass({
       </div>
     );
   },
-
   _fetchTransactions: function() {
     request
       .get('/transactions')
