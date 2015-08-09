@@ -1,18 +1,19 @@
 class TransactionsController < ApplicationController
 
   def index
+    @user = get_user
     respond_to do |format|
-      format.html
       format.json do
-        @transactions = Transaction.order(id: :asc).all
+        @transactions = @user.transactions.order(id: :asc).all
       end
     end
   end
 
   def create
-    transaction = Transaction.new(transaction_params)
+    @user = get_user
+    @transaction = @user.transactions.new(transaction_params)
     respond_to do |format|
-      if transaction.save
+      if @transaction.save
         format.json { render json: {}, status: 201 }
       else
         format.json { render json: @transaction.errors, status: 422 }
@@ -21,7 +22,8 @@ class TransactionsController < ApplicationController
   end
 
   def update
-    @transaction = get_transaction
+    @user = get_user
+    @transaction = get_transaction(@user)
     respond_to do |format|
       if @transaction.update_attributes(transaction_params)
         format.json { render json: {}, status: 202 }
@@ -32,9 +34,10 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
-    @transaction = get_transaction
+    @user = get_user
+    @transaction = get_transaction(@user)
     @transaction.destroy
-    respond_to do |fo|
+    respond_to do |format|
       format.json { render json: {}, status: 200 }
     end
   end
@@ -42,11 +45,15 @@ class TransactionsController < ApplicationController
   private
 
   def transaction_params
-    params.require(:transaction).permit(:name, :date, :amount, :type)
+    params.require(:transaction).permit(:name, :date, :amount, :category)
   end
 
-  def get_transaction
-    Transaction.find[:id]
+  def get_user
+    User.find(session[:user_id])
+  end
+
+  def get_transaction(user)
+    user.transactions.find(params[:id])
   end
 
 
