@@ -25,7 +25,7 @@ var Form = React.createClass({
           <input ref= "password_confirmation" id="password_confirmation" />
         </div>
         <div>
-          <button>Submit</button>
+          <button className="submit">Submit</button>
         </div>
       </form>
     );
