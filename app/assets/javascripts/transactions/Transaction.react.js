@@ -22,7 +22,6 @@ var Transaction = React.createClass({
           <td><input ref="category" type="text" defaultValue={this.props.data.category} /></td>
           <td>
             <button onClick={this._handleSave}>Save</button>
-            <button>Remove</button>
           </td>
         </tr>
       );
@@ -61,6 +60,7 @@ var Transaction = React.createClass({
       amount: this.refs.amount.getDOMNode().value.trim(),
       category: this.refs.category.getDOMNode().value.trim(),
     };
+    this.setState({isEditing: false})
     this.props.updateTransaction(data);
   }
 });

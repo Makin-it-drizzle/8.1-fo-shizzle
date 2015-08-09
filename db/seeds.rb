@@ -6,5 +6,8 @@ User.create!([
 Transaction.create!([
   {user_id: 1, name: 'Harris Teeter', date: '2015-10-10', amount: 1000, category: 'food'},
   {user_id: 1, name: 'Five Guys', date: '2015-11-22', amount: 1200, category: 'food'},
-  {user_id: 1, name: 'Lows', date: '2015-11-23', amount: 12000, category: 'appliance'}
+  {user_id: 1, name: 'Lowes', date: '2015-11-23', amount: 12000, category: 'appliance'},
+  {user_id: 2, name: 'Lion King', date: '2015-10-10', amount: 1000, category: 'food'},
+  {user_id: 2, name: 'Moes', date: '2015-11-22', amount: 1200, category: 'food'},
+  {user_id: 2, name: 'HomeDepot', date: '2015-11-23', amount: 12000, category: 'appliance'}
 ])

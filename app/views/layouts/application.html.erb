@@ -10,7 +10,7 @@
 <body>
 
   <% if current_user %>
-    <%= link_to 'Home', '/' %> | Logged in as <%= current_user.name %> | <%= link_to 'Logout', '/logout' %> | <%= link_to 'Edit', '/edituser' %>
+    <%= link_to 'Budget', '/' %> | Logged in as <%= current_user.name %> | <%= link_to 'Logout', '/logout' %> | <%= link_to 'Edit User', '/edituser' %>
   <% else %>
     <%= link_to 'Home', '/' %> | <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
   <% end %>
