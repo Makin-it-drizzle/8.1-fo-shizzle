@@ -1,14 +1,21 @@
 var React = require('react');
 var request = require('superagent');
+var Show = require('./Show.react.js');
 
-var EditUser = React.createClass({
+var Edit = React.createClass({
   getInitialState: function(){
+    return {
+      user: []
+    };
+  },
+
+  componentWillMount: function(){
     this._fetchUser();
   },
 
   render: function(){
     <div>
-      <h1>edit</h1>
+      <Show user={this.state.user} />
     </div>
   },
   _fetchUser: function(){
@@ -22,6 +29,9 @@ var EditUser = React.createClass({
       console.log(err.response);
       return;
     }
+    this.setState({ user: res.body })
   }
 
-})
+});
+
+module.exports = Edit

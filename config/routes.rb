@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
   root 'home#index'
@@ -12,4 +14,6 @@ Rails.application.routes.draw do
 
   resources :transactions, only: [:index, :create, :update, :destroy]
 
+
+  mount Sidekiq::Web => '/sidekiq'
 end
