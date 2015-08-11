@@ -19,13 +19,14 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-    if current_user
-      @user = get_user
-    else
-      redirect_to root_path
+  def show
+    @user = get_user
+    respond_to do |format|
+      format.html
+      format.json { render json: @user }
     end
   end
+
 
 
   private
