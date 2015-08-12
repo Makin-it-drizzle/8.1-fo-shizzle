@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
   root 'home#index'
@@ -8,8 +10,10 @@ Rails.application.routes.draw do
 
   get  '/signup' => 'users#new'
   post '/users'  => 'users#create'
-  get  '/edituser'  => 'users#edit'
+  get  '/user'    => 'users#show'
 
-  resources :transactions, only: [:index, :create, :update, :destroy]
+  resources :transactions, only: [:index, :show, :create, :update, :destroy]
 
+
+  mount Sidekiq::Web => '/sidekiq'
 end

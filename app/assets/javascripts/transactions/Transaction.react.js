@@ -30,7 +30,7 @@ var Transaction = React.createClass({
         <tr>
           <td>{this.props.data.name}</td>
           <td>{this.props.data.date}</td>
-          <td>{this.props.data.amount}</td>
+          <td>${this.props.data.amount}</td>
           <td>{this.props.data.category}</td>
           <td>
             <button onClick={this._handleEdit}>Edit</button>

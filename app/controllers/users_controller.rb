@@ -19,19 +19,24 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
+  def show
     if current_user
       @user = get_user
+      respond_to do |format|
+        format.html
+        format.json { render json: @user }
+      end
     else
       redirect_to root_path
     end
   end
 
 
+
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :phone, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :avatar, :address, :phone, :email, :password, :password_confirmation)
   end
 
   def get_user
