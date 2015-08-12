@@ -4,8 +4,7 @@ var request = require('superagent');
 var Show = React.createClass({
   getInitialState: function(){
     return {
-      user: [],
-      isEditing: false
+      user: []
     };
   },
 

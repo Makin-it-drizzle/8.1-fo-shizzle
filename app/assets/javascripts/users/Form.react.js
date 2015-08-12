@@ -3,9 +3,7 @@ var request = require('superagent')
 
 
 var Form = React.createClass({
-  componentWillUpdate: function(){
-    this._clearInputs();
-  },
+  
   render: function() {
     return (
       <form onSubmit={this._handleSubmit}>
