@@ -4,7 +4,8 @@ var request = require('superagent');
 var Show = React.createClass({
   getInitialState: function(){
     return {
-      user: []
+      user: [],
+      isEditing: false
     };
   },
 
@@ -13,11 +14,19 @@ var Show = React.createClass({
   },
 
   render: function() {
+    if (this.state.user.avatar) {
+      var url = this.state.user.avatar.url
+    } else {
+      var url = null
+    }
     return (
-      <ul>
-        <li>Name: {this.state.user.name}</li>
-        <li>Email: {this.state.user.email}</li>
-      </ul>
+      <div>
+        <img src={url}></img>
+        <ul>
+          <li>Name: {this.state.user.name}</li>
+          <li>Email: {this.state.user.email}</li>
+        </ul>
+      </div>
     );
   },
 

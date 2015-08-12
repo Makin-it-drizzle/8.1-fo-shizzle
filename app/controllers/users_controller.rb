@@ -20,10 +20,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = get_user
-    respond_to do |format|
-      format.html
-      format.json { render json: @user }
+    if current_user
+      @user = get_user
+      respond_to do |format|
+        format.html
+        format.json { render json: @user }
+      end
+    else
+      redirect_to root_path
     end
   end
 
@@ -32,7 +36,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :address, :phone, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :avatar, :address, :phone, :email, :password, :password_confirmation)
   end
 
   def get_user

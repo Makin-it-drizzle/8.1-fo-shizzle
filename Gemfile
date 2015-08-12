@@ -7,6 +7,8 @@ gem 'pg'
 gem 'puma'
 gem 'sidekiq'
 gem 'sinatra', require: nil
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'fog-aws'
 
 group :development, :test do
   gem 'browserify-rails'
