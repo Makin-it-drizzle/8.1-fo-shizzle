@@ -35,3 +35,4 @@ bower.json
 .powenv
 # Ignore the node_module
 node_modules/
+.env
